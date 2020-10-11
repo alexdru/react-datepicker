@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "../DatePicker.scss";
+import "../styles/data-picker/datepicker.scss";
 
 // import { getMonth, getYear } from "date-fns";
 
@@ -21,48 +21,6 @@ export default () => {
       />
     </div>
   );
-
-  // const CustomHeader = ({ date, changeMonth, changeYear }) => {
-  //   const months = [
-  //     "Январь",
-  //     "Февраль",
-  //     "Март",
-  //     "Апрель",
-  //     "Май",
-  //     "Июнь",
-  //     "Июль",
-  //     "Август",
-  //     "Сентябрь",
-  //     "Октябрь",
-  //     "Ноябрь",
-  //     "Декабрь",
-  //   ];
-  //
-  //   const years = new Array(20).fill(null).map((_, i) => 2000 + i);
-  //
-  //   const handleYearChange = ({ target: { value } }) => changeYear(value);
-  //   const handleMonthChange = ({ target: { value } }) => changeMonth(value);
-  //
-  //   return (
-  //     <div className="date-picker__header">
-  //       <select onChange={handleMonthChange} value={getMonth(date)}>
-  //         {months.map(({ value, label }) => (
-  //           <option value={value} key={value}>
-  //             {label}
-  //           </option>
-  //         ))}
-  //       </select>
-  //
-  //       <select onChange={handleYearChange} value={getYear(date)}>
-  //         {years.map((year) => (
-  //           <option value={year} key={year}>
-  //             {year}
-  //           </option>
-  //         ))}
-  //       </select>
-  //     </div>
-  //   );
-  // };
 
   // const CustomToday = () => <div>Сегодня {startDate}</div>;
 
