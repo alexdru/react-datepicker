@@ -19,7 +19,7 @@
     color: #1A263B;
     font-size: 20px;
 
-    &._error {
+    &._invalid {
       border-color: #F03353;
     }
 
@@ -37,7 +37,7 @@
     &-icon {
       display: block;
       position: absolute;
-      top: 43px;
+      top: 41px;
       right: 13px;
       width: 20px;
       height: 20px;

@@ -6,7 +6,7 @@ import "../styles/data-picker/datepicker.scss";
 import ru from "date-fns/locale/ru";
 import { getMonth, getYear } from "date-fns";
 
-export default () => {
+export default (props) => {
   const [startDate, setStartDate] = useState(new Date());
 
   const CustomInput = ({ value, onClick }) => (
@@ -15,7 +15,11 @@ export default () => {
         Дата
       </label>
       <input
-        className="date-picker__input"
+        className={
+          "date-picker__input " +
+          (props.disabled ? "_disabled" : "") +
+          (props.invalid ? "_invalid" : "")
+        }
         id="date_picker"
         onClick={onClick}
         value={value}

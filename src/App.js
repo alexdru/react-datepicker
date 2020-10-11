@@ -6,6 +6,8 @@ function App() {
   return (
     <div className="App">
       <DatePicker />
+      <DatePicker disabled />
+      <DatePicker invalid />
     </div>
   );
 }
