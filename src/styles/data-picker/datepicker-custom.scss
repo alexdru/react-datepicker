@@ -34,85 +34,65 @@
       outline: none;
     }
 
-    &::after {
-      content: "";
+    &-icon {
       display: block;
       position: absolute;
-      top: 0;
-      right: -20px;
+      top: 43px;
+      right: 13px;
       width: 20px;
       height: 20px;
       background: url("../../calendar.svg") no-repeat;
     }
-
-    //&-icon {
-    //  display: block;
-    //  position: relative;
-    //  top: 0;
-    //  right: -15px;
-    //  border: 1px solid #CBCBCB;
-    //  width: 20px;
-    //  z-index: 9999;
-    //  height: 20px;
-    //  background: url("./calendar.svg") no-repeat;
-    //}
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
-    box-shadow: #64676B;
     background-color: #fff;
     border-bottom: 1px solid #DBDBDF;
+    margin-bottom: 20px;
+    padding: 12px 20px 20px 20px;
 
 
     &-title {
-      padding: 20px 0 20px 20px;
       font-size: 18px;
     }
 
     &-buttons {
       display: flex;
       align-items: center;
-      padding: 20px 20px 20px 0;
       font-size: 18px;
     }
 
-    &-arrow-down {
+    &-arrow {
       border: solid #212B3B;
-      border-width: 0 3px 3px 0;
+      border-width: 0 2px 2px 0;
       display: inline-block;
       height: 15px;
       width: 10px;
-      align-self: flex-start;
       background: transparent;
-      transform: rotate(45deg);
-      margin-right: 20px;
       cursor: pointer;
 
       &:focus {
         outline: none;
       }
-    }
 
-    &-arrow-up {
-      border: solid #212B3B;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      height: 15px;
-      width: 10px;
-      align-self: flex-end;
-      background: transparent;
-      transform: rotate(-135deg);
-      cursor: pointer;
+      &._up {
+        transform: rotate(-135deg);
+        align-self: flex-end;
+      }
 
-      &:focus {
-        outline: none;
+      &._down {
+        transform: rotate(45deg);
+        margin-right: 20px;
+        align-self: flex-start;
       }
     }
   }
 
-  &__calendar {
-    background-color: #496CDC;
+  &__today-button {
+    padding-bottom: 20px;
+    font-size: 18px;
+    color: #395BD8;
   }
 }

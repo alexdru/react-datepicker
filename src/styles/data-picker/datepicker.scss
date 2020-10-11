@@ -17,13 +17,38 @@
   border-radius: $datepicker__border-radius;
   display: inline-block;
   position: relative;
+  box-shadow: 0 0 10px 0 rgba(194,194,194,0.85);
+
+  &__day {
+    //border-radius: $datepicker__hover-day-radius;
+
+    &-name {
+      &:nth-child(7n) {
+        color: #93989E;
+      }
+    }
+
+    &--outside-month {
+      visibility: hidden;
+    }
+
+    &--weekend {
+      &:nth-child(2n+1) {
+        color: #93989E;
+      }
+    }
+
+    &--weekend + &--selected {
+      color: #fff;
+    }
+  }
+
+  &__triangle {
+    display: none;
+  }
 }
 
 .react-datepicker--time-only {
-  .react-datepicker__triangle {
-    left: 35px;
-  }
-
   .react-datepicker__time-container {
     border-left: 0;
   }
@@ -34,63 +59,11 @@
   }
 }
 
-.react-datepicker__triangle {
-  position: absolute;
-  left: 50px;
-}
-
-.react-datepicker-popper {
-  z-index: 1;
-
-  &[data-placement^="bottom"] {
-    margin-top: $datepicker__triangle-size + 2px;
-
-    .react-datepicker__triangle {
-      @extend %triangle-arrow-up;
-    }
-  }
-
-  &[data-placement="bottom-end"],
-  &[data-placement="top-end"] {
-    .react-datepicker__triangle {
-      left: auto;
-      right: 50px;
-    }
-  }
-
-  &[data-placement^="top"] {
-    margin-bottom: $datepicker__triangle-size + 2px;
-
-    .react-datepicker__triangle {
-      @extend %triangle-arrow-down;
-    }
-  }
-
-  &[data-placement^="right"] {
-    margin-left: $datepicker__triangle-size;
-
-    .react-datepicker__triangle {
-      left: auto;
-      right: 42px;
-    }
-  }
-
-  &[data-placement^="left"] {
-    margin-right: $datepicker__triangle-size;
-
-    .react-datepicker__triangle {
-      left: 42px;
-      right: auto;
-    }
-  }
-}
-
 .react-datepicker__header {
   text-align: center;
   background-color: $datepicker__background-color;
   border-bottom: 1px solid $datepicker__border-color;
   border-top-left-radius: $datepicker__border-radius;
-  padding-top: 8px;
   position: relative;
 
   &--time {
@@ -347,8 +320,8 @@
   &.react-datepicker__week-number--clickable {
     cursor: pointer;
     &:hover {
-      border-radius: $datepicker__border-radius;
-      background-color: $datepicker__background-color;
+      border-radius: $datepicker__hover-day-radius;
+      background-color: $datepicker__hover-day-color;
     }
   }
 }
@@ -356,6 +329,7 @@
 .react-datepicker__day-names,
 .react-datepicker__week {
   white-space: nowrap;
+  text-transform: capitalize;
 }
 
 .react-datepicker__day-name,
@@ -399,8 +373,8 @@
   cursor: pointer;
 
   &:hover {
-    border-radius: $datepicker__border-radius;
-    background-color: $datepicker__background-color;
+    border-radius: $datepicker__hover-day-radius;
+    background-color: $datepicker__hover-day-color;
   }
 
   &--today {
@@ -683,5 +657,20 @@
       border-left-color: $datepicker__navigation-disabled-color;
       cursor: default;
     }
+  }
+}
+
+//redefinition
+.react-datepicker__day {
+  border-radius: $datepicker__hover-day-radius;
+}
+
+.react-datepicker__month {
+  padding: 0 20px 20px 20px;
+  border-bottom: 1px solid #DBDBDF;
+  margin: 0;
+
+  &-container {
+    margin-bottom: 20px;
   }
 }

@@ -20,10 +20,13 @@ export default () => {
         onClick={onClick}
         value={value}
       />
+      <div className="date-picker__input-icon" />
     </div>
   );
 
-  // const CustomToday = () => <div>Сегодня {startDate}</div>;
+  const CustomToday = ({ value }) => (
+    <div className="date-picker__today-button">Сегодня {value}</div>
+  );
 
   return (
     <div className="date-picker">
@@ -35,6 +38,12 @@ export default () => {
           prevMonthButtonDisabled,
           nextMonthButtonDisabled,
         }) => {
+          // const months = new Array(12).fill(null).map((_, i) => ({
+          //   value: i,
+          //   label: format(setMonth(new Date(), i), "MMMM", {
+          //     locale: ru,
+          //   }),
+          // }));
           const months = [
             "Январь",
             "Февраль",
@@ -57,12 +66,12 @@ export default () => {
               </div>
               <div className="date-picker__header-buttons">
                 <button
-                  className="date-picker__header-arrow-down"
+                  className="date-picker__header-arrow _down"
                   onClick={decreaseMonth}
                   disabled={prevMonthButtonDisabled}
                 />
                 <button
-                  className="date-picker__header-arrow-up"
+                  className="date-picker__header-arrow _up"
                   onClick={increaseMonth}
                   disabled={nextMonthButtonDisabled}
                 />
@@ -75,8 +84,9 @@ export default () => {
         onChange={(date) => setStartDate(date)}
         customInput={<CustomInput />}
         locale={ru}
-        todayButton="Сегодня"
-      />
+      >
+        <CustomToday />
+      </DatePicker>
     </div>
   );
 };
