@@ -1,6 +1,6 @@
 # react-datepicker
 
-Morion test
+react-datepicker adaptation
 
 ## Installing
 
